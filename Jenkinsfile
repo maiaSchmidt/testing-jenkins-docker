@@ -10,7 +10,7 @@ pipeline {
         junit 'reports/result.xml'
       }
     }
-    stage('build') {
+    stage('Build') {
       steps {
         sh 'ant -f build.xml -v'
       }
@@ -20,7 +20,7 @@ pipeline {
         }
       }
     }
-    stage('publish') {
+    stage('Publish') {
       steps {
         sh "cp dist/rectangle_${env.MAJOR_VERSION}.${env.BUILD_NUMBER}.jar /var/www/html/rectangles/all/"
       }
